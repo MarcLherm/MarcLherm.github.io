@@ -224,6 +224,106 @@
     font-size: 24px;
   }
 }
+    /* Frise chronologique du parcours scolaire */
+
+.parcours-frise {
+  position: relative;
+  margin-top: 50px;
+  padding: 10px 0;
+}
+
+/* Ligne verticale centrale */
+.parcours-frise::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background-color: #d17b35;
+  transform: translateX(-50%);
+}
+
+/* Chaque étape */
+.parcours-etape {
+  position: relative;
+  width: 50%;
+  padding: 0 35px 45px 0;
+}
+
+/* Alternance droite / gauche */
+.parcours-etape:nth-child(even) {
+  margin-left: 50%;
+  padding: 0 0 45px 35px;
+}
+
+/* Points orange */
+.parcours-etape::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: -9px;
+  width: 18px;
+  height: 18px;
+  background-color: #d17b35;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.parcours-etape:nth-child(even)::before {
+  left: -9px;
+  right: auto;
+}
+
+/* Encadrés */
+.parcours-carte {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8edf2;
+}
+
+.parcours-date {
+  display: block;
+  color: #d17b35;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.parcours-carte h2 {
+  color: #17324d;
+  font-size: 20px;
+  margin: 0 0 12px;
+}
+
+.parcours-carte p {
+  color: #52616b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 900px) {
+  .parcours-frise::before {
+    left: 10px;
+  }
+
+  .parcours-etape,
+  .parcours-etape:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 0 30px 35px;
+  }
+
+  .parcours-etape::before,
+  .parcours-etape:nth-child(even)::before {
+    left: 1px;
+    right: auto;
+  }
+}
   </style>
 </head>
 
@@ -293,9 +393,54 @@
     </section>
 
     <section id="parcours" class="page">
-      <h1>Parcours</h1>
-      <p>Contenu à compléter.</p>
-    </section>
+
+  <h1>Mon parcours scolaire</h1>
+
+  <div class="parcours-frise">
+
+    <div class="parcours-etape">
+      <div class="parcours-carte">
+        <span class="parcours-date">Septembre 2026 – Aujourd'hui</span>
+        <h2>BTS SIO – Option SLAM</h2>
+        <p>CNED de Poitiers</p>
+      </div>
+    </div>
+
+    <div class="parcours-etape">
+      <div class="parcours-carte">
+        <span class="parcours-date">2025 – 2026</span>
+        <h2>Licence 1 – Anthropologie</h2>
+        <p>Université Toulouse – Jean Jaurès</p>
+      </div>
+    </div>
+
+    <div class="parcours-etape">
+      <div class="parcours-carte">
+        <span class="parcours-date">2024 – 2025</span>
+        <h2>Licence 1 – Anthropologie</h2>
+        <p>Université Paul-Valéry Montpellier 3</p>
+      </div>
+    </div>
+
+    <div class="parcours-etape">
+      <div class="parcours-carte">
+        <span class="parcours-date">2023 – 2024</span>
+        <h2>BTS GPME – 1re année</h2>
+        <p>Institut Limayrac – Toulouse</p>
+      </div>
+    </div>
+
+    <div class="parcours-etape">
+      <div class="parcours-carte">
+        <span class="parcours-date">2022</span>
+        <h2>Baccalauréat STMG</h2>
+        <p>Lycée Sainte-Marie de Nevers – Toulouse</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
 
     <section id="competences" class="page">
       <h1>Compétences</h1>
