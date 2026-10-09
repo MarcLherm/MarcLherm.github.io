@@ -84,13 +84,57 @@
         padding: 25px;
       }
     }
+    /* Présentation personnelle dans le menu */
+
+.profil {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.photo-profil {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 18px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background-color: #315a7c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-profil span {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.profil h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.profil p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #dce7f0;
+}
   </style>
 </head>
 
 <body>
 
   <nav class="sidebar" aria-label="Navigation principale">
-    <h2>Portfolio</h2>
+    <div class="profil">
+  <div class="photo-profil">
+    <span>Photo</span>
+  </div>
+
+  <h2>Nom Prénom</h2>
+
+  <p>Étudiant en BTS SIO<br>option SLAM</p>
+</div>
 
     <a href="#accueil" data-page="accueil">Accueil</a>
     <a href="#a-propos" data-page="a-propos">À propos</a>
