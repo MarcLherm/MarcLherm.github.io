@@ -439,6 +439,130 @@
   height: 42px;
   object-fit: contain;
 }
+ 
+/* PAGE CONTACT */
+
+.contact-surtitre {
+  color: #d17b35;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.contact-contenu {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 55px;
+  margin-top: 55px;
+  align-items: start;
+}
+
+/* Colonne gauche */
+
+.contact-informations {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact-carte {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  min-height: 105px;
+  background-color: #fff;
+  border: 1px solid #e2e5e9;
+  border-radius: 10px;
+  color: #17324d;
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.contact-icone {
+  color: #e67e22;
+  font-size: 24px;
+  font-weight: 700;
+  min-width: 35px;
+  text-align: center;
+}
+
+.contact-carte a {
+  color: #17324d;
+  text-decoration: none;
+}
+
+.contact-carte a:hover {
+  color: #d17b35;
+}
+
+/* Colonne droite */
+
+.contact-formulaire {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-formulaire label {
+  color: #17324d;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.contact-formulaire input,
+.contact-formulaire textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px;
+  border: 1px solid #d9dde2;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #17324d;
+  font-family: inherit;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-formulaire input:focus,
+.contact-formulaire textarea:focus {
+  outline: none;
+  border-color: #d17b35;
+}
+
+.contact-formulaire textarea {
+  resize: vertical;
+  min-height: 190px;
+}
+
+.contact-formulaire button {
+  padding: 18px;
+  background-color: #fff;
+  border: 1px solid #17324d;
+  border-radius: 10px;
+  color: #17324d;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.contact-formulaire button:hover {
+  background-color: #17324d;
+  color: #fff;
+}
+
+/* Adaptation aux petits écrans */
+
+@media (max-width: 900px) {
+  .contact-contenu {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+   
   </style>
 </head>
 
