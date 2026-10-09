@@ -325,6 +325,116 @@
     right: auto;
   }
 }
+    
+/* RUBRIQUE COMPÉTENCES */
+
+.competences-surtitre {
+  color: #d17b35;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Deux grands cadres côte à côte */
+
+.competences-categories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 35px;
+  align-items: start;
+}
+
+/* Cadre de chaque catégorie */
+
+.competences-categorie {
+  background-color: #ffffff;
+  border: 2px solid #17324d;
+  border-radius: 14px;
+  padding: 25px;
+  min-width: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.competences-categorie h2 {
+  color: #17324d;
+  font-size: 20px;
+  margin: 0 0 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e8edf2;
+}
+
+/* Cartes des technologies */
+
+.competences-grille {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.competence-carte {
+  background-color: #f8fafc;
+  border: 1px solid #e8edf2;
+  border-radius: 10px;
+  padding: 20px 8px;
+  min-height: 110px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.competence-carte i {
+  font-size: 42px;
+}
+
+.competence-carte span {
+  color: #17324d;
+  font-size: 13px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.competence-carte:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+}
+
+/* Adaptation aux écrans */
+
+@media (max-width: 1200px) {
+  .competences-categories {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .competences-categorie {
+    padding: 15px;
+  }
+
+  .competences-grille {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .competence-carte {
+    min-height: 100px;
+    padding: 15px 5px;
+  }
+
+  .competence-carte i {
+    font-size: 36px;
+  }
+}
+
   </style>
 </head>
 
