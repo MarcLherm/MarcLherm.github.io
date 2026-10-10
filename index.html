@@ -563,6 +563,99 @@
     gap: 40px;
   }
 }
+
+/* SECTION CERTIFICATIONS */
+
+.certifications-surtitre {
+  color: #d17b35;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.certifications-introduction {
+  color: #526477;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 850px;
+  margin-top: 25px;
+}
+
+.certifications-grille {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.certification-carte {
+  background-color: #ffffff;
+  border: 1px solid #e2e5e9;
+  border-radius: 12px;
+  padding: 30px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.certification-carte:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(23, 50, 77, 0.10);
+}
+
+.certification-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  background-color: #fff3e8;
+  color: #e67e22;
+  border-radius: 12px;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.certification-carte h2 {
+  color: #17324d;
+  font-size: 21px;
+  margin-bottom: 15px;
+}
+
+.certification-statut {
+  display: inline-block;
+  background-color: #fff3e8;
+  color: #b9631c;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.certification-carte p {
+  color: #526477;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ADAPTATION TABLETTES ET MOBILES */
+
+@media (max-width: 1100px) {
+  .certifications-grille {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .certifications-grille {
+    grid-template-columns: 1fr;
+  }
+
+  .certification-carte {
+    padding: 25px;
+  }
+}
    
   </style>
 </head>
