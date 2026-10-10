@@ -922,5 +922,55 @@
     afficherPage();
   </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const formulaire = document.querySelector(".contact-formulaire");
+  const confirmation = document.getElementById("contact-confirmation");
+
+  if (!formulaire || !confirmation) return;
+
+  const bouton = formulaire.querySelector('button[type="submit"]');
+
+  formulaire.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    confirmation.style.display = "none";
+    bouton.disabled = true;
+    bouton.textContent = "Envoi en cours...";
+
+    try {
+      const reponse = await fetch(formulaire.action, {
+        method: "POST",
+        body: new FormData(formulaire),
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (!reponse.ok) {
+        throw new Error("Échec de l'envoi");
+      }
+
+      formulaire.reset();
+
+      confirmation.textContent =
+        "Votre message a bien été envoyé. Merci pour votre prise de contact !";
+      confirmation.style.color = "#228b57";
+      confirmation.style.display = "block";
+
+    } catch (erreur) {
+      confirmation.textContent =
+        "Une erreur est survenue. Veuillez réessayer.";
+      confirmation.style.color = "#c0392b";
+      confirmation.style.display = "block";
+
+    } finally {
+      bouton.disabled = false;
+      bouton.textContent = "Envoyer";
+    }
+  });
+});
+</script>
+
 </body>
 </html>
