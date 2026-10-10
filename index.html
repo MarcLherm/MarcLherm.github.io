@@ -656,6 +656,136 @@
     padding: 25px;
   }
 }
+
+/* SECTION PROJETS */
+
+.projets-surtitre {
+  color: #d17b35;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.projets-categorie {
+  color: #17324d;
+  font-size: 25px;
+  margin-top: 45px;
+  margin-bottom: 30px;
+}
+
+/* GRILLE DES PROJETS */
+
+.projets-grille {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px;
+  align-items: stretch;
+}
+
+/* CARTES */
+
+.projet-carte {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #e2e5e9;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.projet-carte:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(23, 50, 77, 0.10);
+}
+
+/* ILLUSTRATIONS */
+
+.projet-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 230px;
+  background-color: #edf1f5;
+  color: #e67e22;
+  font-size: 75px;
+}
+
+/* CONTENU DES CARTES */
+
+.projet-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 30px;
+}
+
+.projet-statut {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #fff3e8;
+  color: #b9631c;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.projet-details h3 {
+  color: #17324d;
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.projet-details p {
+  color: #526477;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.projet-entreprise {
+  font-style: italic;
+}
+
+/* TECHNOLOGIES */
+
+.projet-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.projet-technologies span {
+  background-color: #795548;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ADAPTATION AUX PETITS ÉCRANS */
+
+@media (max-width: 900px) {
+  .projets-grille {
+    grid-template-columns: 1fr;
+  }
+
+  .projet-illustration {
+    height: 190px;
+  }
+
+  .projet-details {
+    padding: 25px;
+  }
+}
    
   </style>
 </head>
