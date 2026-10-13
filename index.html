@@ -1285,36 +1285,59 @@
 
   </main>
 
-  <script>
-    function afficherPage() {
-      const pages = document.querySelectorAll(".page");
-      const liens = document.querySelectorAll("[data-page]");
-      const identifiant = window.location.hash.slice(1) || "accueil";
+  
+<script>
+  function afficherPage() {
+    const pages = document.querySelectorAll(".page");
+    const liens = document.querySelectorAll("[data-page]");
+    const identifiant = window.location.hash.slice(1) || "accueil";
 
-      const pageDemandee = document.getElementById(identifiant);
-      const pageActive = pageDemandee && pageDemandee.classList.contains("page")
+    const estAPropos = identifiant === "a-propos";
+
+    const pageDemandee = document.getElementById(identifiant);
+
+    const pageActive = estAPropos
+      ? "accueil"
+      : pageDemandee && pageDemandee.classList.contains("page")
         ? identifiant
         : "accueil";
 
-      pages.forEach(page => {
-        page.classList.toggle("active", page.id === pageActive);
-      });
+    pages.forEach(page => {
+      page.classList.toggle("active", page.id === pageActive);
+    });
 
-      liens.forEach(lien => {
-        const active = lien.dataset.page === pageActive;
-        lien.classList.toggle("active", active);
+    liens.forEach(lien => {
+      const active = lien.dataset.page === identifiant ||
+        (identifiant === "" && lien.dataset.page === "accueil");
 
-        if (active) {
-          lien.setAttribute("aria-current", "page");
-        } else {
-          lien.removeAttribute("aria-current");
+      lien.classList.toggle("active", active);
+
+      if (active) {
+        lien.setAttribute("aria-current", "page");
+      } else {
+        lien.removeAttribute("aria-current");
+      }
+    });
+
+    if (estAPropos) {
+      requestAnimationFrame(() => {
+        const rubrique = document.getElementById("apropos");
+        if (rubrique) {
+          rubrique.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
         }
       });
+    } else {
+      window.scrollTo(0, 0);
     }
+  }
 
-    window.addEventListener("hashchange", afficherPage);
-    afficherPage();
-  </script>
+  window.addEventListener("hashchange", afficherPage);
+  afficherPage();
+</script>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
