@@ -1548,6 +1548,7 @@
   </main>
 
   
+
 <script>
   function afficherPage() {
     const pages = document.querySelectorAll(".page");
@@ -1556,21 +1557,50 @@
 
     const estAPropos = identifiant === "a-propos";
 
+    const estProjetScolaire =
+      identifiant === "projets-scolaires";
+
+    const estProjetProfessionnel =
+      identifiant === "projets-professionnels";
+
+    const estRubriqueProjet =
+      estProjetScolaire || estProjetProfessionnel;
+
     const pageDemandee = document.getElementById(identifiant);
 
     const pageActive = estAPropos
       ? "accueil"
-      : pageDemandee && pageDemandee.classList.contains("page")
-        ? identifiant
-        : "accueil";
+      : estRubriqueProjet
+        ? "projets"
+        : pageDemandee && pageDemandee.classList.contains("page")
+          ? identifiant
+          : "accueil";
 
     pages.forEach(page => {
       page.classList.toggle("active", page.id === pageActive);
     });
 
+    // Affichage des rubriques Projets
+    const scolaires = document.getElementById("projets-scolaires");
+    const titreProfessionnels =
+      document.getElementById("projets-professionnels");
+    const grilleProfessionnels =
+      titreProfessionnels?.nextElementSibling;
+
+    if (scolaires && titreProfessionnels && grilleProfessionnels) {
+      scolaires.style.display =
+        estProjetProfessionnel ? "none" : "";
+
+      titreProfessionnels.style.display =
+        estProjetScolaire ? "none" : "";
+
+      grilleProfessionnels.style.display =
+        estProjetScolaire ? "none" : "";
+    }
+
+    // Mise en évidence du lien sélectionné
     liens.forEach(lien => {
-      const active = lien.dataset.page === identifiant ||
-        (identifiant === "" && lien.dataset.page === "accueil");
+      const active = lien.getAttribute("href") === "#" + identifiant;
 
       lien.classList.toggle("active", active);
 
@@ -1584,6 +1614,7 @@
     if (estAPropos) {
       requestAnimationFrame(() => {
         const rubrique = document.getElementById("apropos");
+
         if (rubrique) {
           rubrique.scrollIntoView({
             behavior: "smooth",
@@ -1599,6 +1630,7 @@
   window.addEventListener("hashchange", afficherPage);
   afficherPage();
 </script>
+
 
 
 <script>
