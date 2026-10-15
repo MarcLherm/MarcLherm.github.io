@@ -1123,6 +1123,26 @@
   }
 }
 
+/* LISTE DES ACTIVITÉS DU PROJET SCOLAIRE */
+.activites-projet {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 12px;
+}
+
+.activites-projet li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.activites-projet li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+}
+
   </style>
 </head>
 
@@ -1600,12 +1620,19 @@
        alt="Illustration du projet scolaire specfonctionnelles">
       </div>
       <div class="projet-scolaire-contenu">
-        <p>Au sein de la direction des systèmes d’information d’une entreprise cliente, à partir du cahier des charges:
-        Analyse du besoin exprimé et son contexte juridique.
-        Modélisation d’une solution applicative.
-        Participation à la conception de l’architecture d’une solution applicative.
-        Rédiger des documentations techniques et d’utilisation d’une solution applicative.
-        </p>
+        
+<p>
+  Au sein de la direction des systèmes d’information
+  d’une entreprise cliente, à partir du cahier des charges :
+</p>
+
+<ul class="activites-projet">
+  <li>Analyse du besoin exprimé et son contexte juridique.</li>
+  <li>Modélisation d’une solution applicative.</li>
+  <li>Participation à la conception de l’architecture d’une solution applicative.</li>
+  <li>Rédiger des documentations techniques et d’utilisation d’une solution applicative.</li>
+</ul>
+
       
 <div class="projet-technologies">
   <span>UML</span>
