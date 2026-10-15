@@ -1100,6 +1100,29 @@
   display: block;
 }
 
+/* AGRANDISSEMENT DES DEUX CARTES SCOLAIRES */
+.projets-scolaires-grille {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: none;
+}
+
+.projets-scolaires-grille .projet-scolaire-carte {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* ADAPTATION AUX PETITS ÉCRANS */
+@media screen and (max-width: 768px) {
+  .projets-scolaires-grille {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 </head>
 
