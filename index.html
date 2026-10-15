@@ -1049,6 +1049,21 @@
   display: block;
 }
 
+/* AFFICHAGE RESPONSIVE DES CARTES PROJETS */
+@media screen and (max-width: 768px) {
+  .projets-selection-grille {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .projets-selection-carte {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+}
+
   </style>
 </head>
 
