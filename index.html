@@ -1710,24 +1710,44 @@
       page.classList.toggle("active", page.id === pageActive);
     });
 
-    // Affichage des rubriques Projets
-    const scolaires = document.getElementById("projets-scolaires");
+
+    // Affichage indépendant des trois rubriques Projets
+    const presentation =
+      document.getElementById("projets-presentation");
+
+    const scolaires =
+      document.getElementById("projets-scolaires");
+
     const titreProfessionnels =
       document.getElementById("projets-professionnels");
+
     const grilleProfessionnels =
       titreProfessionnels?.nextElementSibling;
 
-    if (scolaires && titreProfessionnels && grilleProfessionnels) {
+    const afficherPresentation = identifiant === "projets";
+    const afficherScolaires = identifiant === "projets-scolaires";
+    const afficherProfessionnels = identifiant === "projets-professionnels";
+
+    if (presentation && scolaires &&
+        titreProfessionnels && grilleProfessionnels) {
+
+      presentation.style.display =
+        afficherPresentation ? "" : "none";
+
       scolaires.style.display =
-        estProjetProfessionnel ? "none" : "";
+        afficherScolaires ? "" : "none";
 
       titreProfessionnels.style.display =
-        estProjetScolaire ? "none" : "";
+        afficherProfessionnels ? "" : "none";
 
       grilleProfessionnels.style.display =
-        estProjetScolaire ? "none" : "";
+        afficherProfessionnels ? "" : "none";
     }
 
+
+
+
+    
     // Mise en évidence du lien sélectionné
     liens.forEach(lien => {
       const active = lien.getAttribute("href") === "#" + identifiant;
